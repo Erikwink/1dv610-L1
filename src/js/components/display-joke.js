@@ -3,7 +3,16 @@
 const template = document.createElement
     ('template')
 template.innerHTML = `
-<div>
+<style>
+    #window {
+        border: 1px solid black;
+        background-color: orange;
+        padding: 5px;
+        margin: 5px;
+        
+    }
+</style>
+<div id="window">
     <h2 id="setup"></h2>
     <h2 id="delivery"></h2>
     <h2 id="joke"></h2>
