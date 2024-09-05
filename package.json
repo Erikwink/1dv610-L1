@@ -1,0 +1,11 @@
+{
+  "name": "1dv610-l1",
+  "version": "1.0.0",
+  "description": "task L1 for 1dv610",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik Wink",
+  "license": "ISC"
+}
