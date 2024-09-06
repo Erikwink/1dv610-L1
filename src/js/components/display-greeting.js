@@ -3,15 +3,15 @@ const template = document.createElement
 template.innerHTML = `
 <style>
     #window {
-        border: 1px solid black;
-        background-color: orange;
-        padding: 5px;
-        margin: 5px;
+        background-color: #95d5b2;
+        padding: 10px;
+        margin: 10px 10px 0px 10px;
+        border-radius: 10px 10px 0 0 ;
     }
 </style>
 <div id="window">
     <h1>Hello  <span id="name"></span></h1>
-    <h2>here is a joke to enlighten your day</h2>
+    <h2>Here is a joke to enlighten your day:</h2>
 </div>`
 
 /** Define the custom element

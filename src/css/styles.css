@@ -1,6 +1,36 @@
 body {
-    background-color: antiquewhite;
-    border-width: 5px;
+    background-color: #d8f3dc;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#main {
+    width: 70%;
+    border: 1px #faedcd;
     border-radius: 10px;
-    border-color: black;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #40916c;
+}
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #081c15;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #00b4d8;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0096c7;
 }

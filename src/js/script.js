@@ -16,8 +16,8 @@ document.getElementById('btn').addEventListener('click', () =>{
     }
     const newGreeting = document.createElement('display-greeting')
     newGreeting.name = name.value
-    document.querySelector('body').appendChild(newGreeting)
+    document.querySelector('#main').appendChild(newGreeting)
     const newJoke = document.createElement('display-joke')
-    document.querySelector('body').appendChild(newJoke)
+    document.querySelector('#main').appendChild(newJoke)
     name.value = ''
 })

@@ -5,10 +5,11 @@ const template = document.createElement
 template.innerHTML = `
 <style>
     #window {
-        border: 1px solid black;
-        background-color: orange;
-        padding: 5px;
-        margin: 5px;
+        border-top: 1px solid #2d6a4f;
+        background-color: #95d5b2;
+        padding: 10px;
+        margin: 0px 10px 20px 10px;
+        border-radius: 0 0 10px 10px;
         
     }
 </style>
