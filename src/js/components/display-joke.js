@@ -14,9 +14,8 @@ template.innerHTML = `
     }
 </style>
 <div id="window">
-    <h2 id="setup"></h2>
+    <h2 id="setup">Waiting for joke</h2>
     <h2 id="delivery"></h2>
-    <h2 id="joke"></h2>
 </div>`
 
 /** Define the custom element
@@ -35,11 +34,6 @@ customElements.define('display-joke',
          */
         #delivery
 
-        /** A single Joke.
-         * 
-         */
-        #joke
-
         constructor() {
             super()
             // Attach a shadow DOM tree to this element and
@@ -51,7 +45,6 @@ customElements.define('display-joke',
 
                 this.#delivery = this.shadowRoot.querySelector('#delivery')
 
-                this.#joke = this.shadowRoot.querySelector('#joke')
         }
         /**
          * Called after the element is inserted into the DOM.
@@ -64,15 +57,23 @@ customElements.define('display-joke',
          * 
          */
         async fetchJoke() {
+            try {
             const respons = await fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit')
             const data = await respons.json()
             console.log(data)
-            if (data.type === 'twopart') {
+            if (data.error) {
+                this.#setup.innerHTML = 'Something went wrong, please try again'
+                throw new Error('something went wrong')
+                
+            } else if (data.type === 'twopart') {
                  this.#setup.innerHTML = data.setup
                  this.#delivery.innerHTML = data.delivery
             } else {
-                this.#joke.innerHTML = data.joke
+                this.#setup.innerHTML = data.joke
             }
+        } catch (error) {
+            throw new Error('something went wrong')
+        }
 
         }
     }

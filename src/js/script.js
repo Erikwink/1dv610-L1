@@ -3,10 +3,8 @@ import './components/display-greeting.js'
 
 document.getElementById('btn').addEventListener('click', () =>{
     const name = document.getElementById('name')
-    if (name.value === '') {
-        alert('type your name')
-        return
-    }
+    const hiddenMessage = document.getElementById('hidden')
+    // remove old greeting and joke
     const exsistingJoke = document.querySelector('display-joke')
     const exsistingGreeting = document.querySelector('display-greeting')
     if (exsistingJoke || exsistingGreeting) {
@@ -14,6 +12,14 @@ document.getElementById('btn').addEventListener('click', () =>{
         exsistingGreeting.remove()
         
     }
+    // check if input field is empty
+    if (name.value === '') {
+        hiddenMessage.style.display = 'block'
+        return
+    }
+
+    hiddenMessage.style.display = 'none'
+    // create new joke and greeting
     const newGreeting = document.createElement('display-greeting')
     newGreeting.name = name.value
     document.querySelector('#main').appendChild(newGreeting)
